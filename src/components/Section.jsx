@@ -1,0 +1,9 @@
+export default function Section({ title, children }) {
+  return (
+    <div>
+      <h2>{title}</h2>
+      <hr />
+      {children}
+    </div>
+  );
+}
