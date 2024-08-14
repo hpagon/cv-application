@@ -4,25 +4,26 @@ const defaultItems = [
 ];
 
 export default function Experience({
-  positionName = "Software Engineer Intern",
-  time = "May 2024 - July 2024",
-  organization = "Some Company",
-  location = "Seattle, WA",
-  description = defaultItems,
+  //   positionName = "Software Engineer Intern",
+  //   time = "May 2024 - July 2024",
+  //   organization = "Some Company",
+  //   location = "Seattle, WA",
+  //   description = defaultItems,
+  experience,
 }) {
   return (
     <div>
       <div>
-        <h3>{positionName}</h3>
-        <p>{time}</p>
+        <h3>{experience.positionName}</h3>
+        <p>{experience.time}</p>
       </div>
       <div>
-        <p>{organization}</p>
-        <p>{location}</p>
+        <p>{experience.organization}</p>
+        <p>{experience.location}</p>
       </div>
       <ul>
-        {description.map((item) => {
-          return <li key={item.id}>{item.description}</li>;
+        {experience.description.map((id) => {
+          return <li key={id}>{experience[id]}</li>;
         })}
       </ul>
     </div>

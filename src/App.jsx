@@ -16,7 +16,7 @@ const emptyData = {
     libraries: 8,
   },
   school: [9],
-  experience: [10],
+  experience: [],
   project: [],
   0: "",
   1: "",

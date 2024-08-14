@@ -29,7 +29,9 @@ function Resume({ resumeData }) {
         })}
       </Section>
       <Section title={"Experience"}>
-        <Experience />
+        {resumeData.experience.map((id) => {
+          return <Experience key={id} experience={resumeData[id]} />;
+        })}
       </Section>
       <Section title={"Projects"}>
         {resumeData.project.map((id) => {

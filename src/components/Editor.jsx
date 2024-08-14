@@ -103,7 +103,36 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
           Add New Education
         </button>
       </Dropdown>
-      <Dropdown title="Experience" key="Experience"></Dropdown>
+      <Dropdown title="Experience" key="Experience">
+        {resumeData.experience.map((id) => {
+          return (
+            <ExperienceEdit
+              key={id}
+              handleChange={handleChange}
+              resumeData={resumeData}
+              experienceId={id}
+            />
+          );
+        })}
+        <button
+          onClick={() => {
+            const newId = uuidv4();
+            handleChange({
+              ...resumeData,
+              experience: [...resumeData.experience, newId],
+              [newId]: {
+                positionName: "",
+                time: "",
+                organization: "",
+                location: "",
+                description: [],
+              },
+            });
+          }}
+        >
+          Add New Experience
+        </button>
+      </Dropdown>
       <Dropdown title="Projects" key="Projects">
         {resumeData.project.map((id) => {
           return (
