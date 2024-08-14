@@ -5,10 +5,16 @@ import Experience from "./Experience";
 import Project from "./Project";
 import Skill from "./Skill";
 
-function Resume() {
+function Resume({ resumeData }) {
   return (
     <div>
-      <Header />
+      <Header
+        fullName={resumeData[resumeData.id.fullName]}
+        phoneNumber={resumeData[resumeData.id.phoneNumber]}
+        email={resumeData[resumeData.id.email]}
+        linkedIn={resumeData[resumeData.id.linkedIn]}
+        github={resumeData[resumeData.id.github]}
+      />
       <Section title={"Education"}>
         <School />
       </Section>
