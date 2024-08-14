@@ -16,7 +16,17 @@ function Resume({ resumeData }) {
         github={resumeData[resumeData.id.github]}
       />
       <Section title={"Education"}>
-        <School />
+        {resumeData.school.map((schoolId) => {
+          return (
+            <School
+              key={schoolId}
+              schoolName={resumeData[schoolId]["schoolName"]}
+              location={resumeData[schoolId]["location"]}
+              major={resumeData[schoolId]["major"]}
+              time={resumeData[schoolId]["time"]}
+            />
+          );
+        })}
       </Section>
       <Section title={"Experience"}>
         <Experience />
@@ -25,10 +35,13 @@ function Resume({ resumeData }) {
         <Project />
       </Section>
       <Section title={"Technical Skills"}>
-        <Skill type="Languages" />
-        <Skill type="Frameworks" />
-        <Skill type="Developer Tools" />
-        <Skill type="Libraries" />
+        <Skill type="Languages" items={resumeData[resumeData.id.languages]} />
+        <Skill type="Frameworks" items={resumeData[resumeData.id.frameworks]} />
+        <Skill
+          type="Developer Tools"
+          items={resumeData[resumeData.id.devTools]}
+        />
+        <Skill type="Libraries" items={resumeData[resumeData.id.libraries]} />
       </Section>
     </div>
   );
