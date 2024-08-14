@@ -104,7 +104,35 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
         </button>
       </Dropdown>
       <Dropdown title="Experience" key="Experience"></Dropdown>
-      <Dropdown title="Projects" key="Projects"></Dropdown>
+      <Dropdown title="Projects" key="Projects">
+        {resumeData.project.map((id) => {
+          return (
+            <ProjectEdit
+              key={id}
+              handleChange={handleChange}
+              resumeData={resumeData}
+              projectId={id}
+            />
+          );
+        })}
+        <button
+          onClick={() => {
+            const newId = uuidv4();
+            handleChange({
+              ...resumeData,
+              project: [...resumeData.project, newId],
+              [newId]: {
+                projectName: "",
+                tools: "",
+                time: "",
+                description: [],
+              },
+            });
+          }}
+        >
+          Add New Project
+        </button>
+      </Dropdown>
       <Dropdown title="Technical Skills" key="Technical Skills">
         <div>
           <label htmlFor="languages">Languages</label>

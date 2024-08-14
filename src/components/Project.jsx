@@ -4,21 +4,22 @@ const defaultItems = [
 ];
 
 export default function Project({
-  projectName = "Example Project",
-  tools = "HTML, CSS, JavaScript, React",
-  time = "July 2024 - July 2024",
-  description = defaultItems,
+  //   projectName = "Example Project",
+  //   tools = "HTML, CSS, JavaScript, React",
+  //   time = "July 2024 - July 2024",
+  //   description = defaultItems,
+  project,
 }) {
   return (
     <div>
       <div>
-        <h4>{projectName}</h4>
-        <p>{tools}</p>
-        <p>{time}</p>
+        <h4>{project.projectName}</h4>
+        <p>{project.tools}</p>
+        <p>{project.time}</p>
       </div>
       <ul>
-        {description.map((item) => {
-          return <li key={item.id}>{item.description}</li>;
+        {project.description.map((id) => {
+          return <li key={id}>{project[id]}</li>;
         })}
       </ul>
     </div>

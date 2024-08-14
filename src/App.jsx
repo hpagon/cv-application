@@ -17,7 +17,7 @@ const emptyData = {
   },
   school: [9],
   experience: [10],
-  project: [11],
+  project: [],
   0: "",
   1: "",
   2: "",

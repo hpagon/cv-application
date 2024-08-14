@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
   return (
     <div>
