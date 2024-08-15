@@ -4,6 +4,8 @@ export default function Header({
   email = "exampleEmail@gmail.com",
   linkedIn = "https://www.linkedin.com/",
   github = "https://github.com/",
+  linkedInUrl,
+  githubUrl,
 }) {
   return (
     <div>
@@ -11,8 +13,12 @@ export default function Header({
       <div>
         <p>{phoneNumber}</p>
         <p>{email}</p>
-        <p>{linkedIn}</p>
-        <p>{github}</p>
+        <p>
+          <a href={linkedInUrl}>{linkedIn}</a>
+        </p>
+        <p>
+          <a href={githubUrl}>{github}</a>
+        </p>
       </div>
     </div>
   );

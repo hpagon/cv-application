@@ -5,7 +5,7 @@ import ProjectEdit from "./ProjectEdit";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 
-export default function Editor({ handleChange, resumeData, handleInsert }) {
+export default function Editor({ handleChange, resumeData }) {
   //keeps track of which root dropdown is open (only one can be open at a time)
   const [open, setOpen] = useState("");
 
@@ -42,7 +42,7 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
         <div>
           <label htmlFor="phoneNumber">Phone Number</label>
           <input
-            type="text"
+            type="tel"
             name="phoneNumber"
             onChange={(e) =>
               handleChange({
@@ -56,7 +56,7 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
         <div>
           <label htmlFor="email">Email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             onChange={(e) =>
               handleChange({
@@ -79,6 +79,19 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
               })
             }
             value={resumeData[resumeData.id.linkedIn]}
+            placeholder="Display text"
+          />
+          <input
+            type="url"
+            name="linkedInUrl"
+            onChange={(e) =>
+              handleChange({
+                ...resumeData,
+                [resumeData.id.linkedInUrl]: e.target.value,
+              })
+            }
+            value={resumeData[resumeData.id.linkedInUrl]}
+            placeholder="https://www.linkedin.com/"
           />
         </div>
         <div>
@@ -93,6 +106,19 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
               })
             }
             value={resumeData[resumeData.id.github]}
+            placeholder="Display text"
+          />
+          <input
+            type="url"
+            name="githubUrl"
+            onChange={(e) =>
+              handleChange({
+                ...resumeData,
+                [resumeData.id.githubUrl]: e.target.value,
+              })
+            }
+            value={resumeData[resumeData.id.githubUrl]}
+            placeholder="https://github.com/"
           />
         </div>
       </Dropdown>

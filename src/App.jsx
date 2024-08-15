@@ -14,6 +14,8 @@ const emptyData = {
     frameworks: 6,
     devTools: 7,
     libraries: 8,
+    linkedInUrl: 9,
+    githubUrl: 10,
   },
   school: [],
   experience: [],
@@ -27,23 +29,19 @@ const emptyData = {
   6: "",
   7: "",
   8: "",
+  9: "",
+  10: "",
 };
 
 function App() {
   const [resumeData, setResumeData] = useState(emptyData);
-  const [insertedData, setInsertedData] = useState([]);
 
-  const editInsertedData = (newData) => setInsertedData(newData);
   const editResumeData = (newData) => setResumeData(newData);
 
   console.log(resumeData);
   return (
     <>
-      <Editor
-        handleChange={editResumeData}
-        resumeData={resumeData}
-        handleInsert={editInsertedData}
-      />
+      <Editor handleChange={editResumeData} resumeData={resumeData} />
       <Resume resumeData={resumeData} />
     </>
   );

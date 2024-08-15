@@ -14,6 +14,8 @@ function Resume({ resumeData }) {
         email={resumeData[resumeData.id.email]}
         linkedIn={resumeData[resumeData.id.linkedIn]}
         github={resumeData[resumeData.id.github]}
+        linkedInUrl={resumeData[resumeData.id.linkedInUrl]}
+        githubUrl={resumeData[resumeData.id.githubUrl]}
       />
       <Section title={"Education"}>
         {resumeData.school.map((schoolId) => {
