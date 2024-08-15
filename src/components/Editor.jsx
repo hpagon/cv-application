@@ -3,11 +3,28 @@ import SchoolEdit from "./SchoolEdit";
 import ExperienceEdit from "./ExperienceEdit";
 import ProjectEdit from "./ProjectEdit";
 import { v4 as uuidv4 } from "uuid";
+import { useState } from "react";
 
 export default function Editor({ handleChange, resumeData, handleInsert }) {
+  //   const [openSectionDropDown, setOpenSectionDropDown] = useState("");
+
+  //   function openDropDown(id) {
+  //     if (openSectionDropDown === id) {
+  //       setOpenSectionDropDown("");
+  //       return;
+  //     }
+  //     setOpenSectionDropDown(id);
+  //   }
   return (
     <div>
-      <Dropdown title="Personal" key="Personal">
+      <Dropdown
+        title="Personal"
+        key="Personal"
+        type="large"
+        // handleChange={openDropDown}
+        // dropDownId={"Personal"}
+        // visibility={openSectionDropDown === "Personal"}
+      >
         <div>
           <label htmlFor="fullName">Full Name</label>
           <input
@@ -79,15 +96,23 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
           />
         </div>
       </Dropdown>
-      <Dropdown title="Education" key="Education">
+      <Dropdown
+        title="Education"
+        key="Education"
+        type="large"
+        // handleChange={openDropDown}
+        // dropDownId={"Education"}
+        // visibility={openSectionDropDown === "Education"}
+      >
         {resumeData.school.map((id) => {
           return (
-            <SchoolEdit
-              handleChange={handleChange}
-              resumeData={resumeData}
-              key={id}
-              schoolId={id}
-            />
+            <Dropdown title={resumeData[id]["schoolName"]} key={id}>
+              <SchoolEdit
+                handleChange={handleChange}
+                resumeData={resumeData}
+                schoolId={id}
+              />
+            </Dropdown>
           );
         })}
         <button
@@ -103,15 +128,23 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
           Add New Education
         </button>
       </Dropdown>
-      <Dropdown title="Experience" key="Experience">
+      <Dropdown
+        title="Experience"
+        key="Experience"
+        type="large"
+        // handleChange={openDropDown}
+        // dropDownId={"Experience"}
+        // visibility={openSectionDropDown === "Experience"}
+      >
         {resumeData.experience.map((id) => {
           return (
-            <ExperienceEdit
-              key={id}
-              handleChange={handleChange}
-              resumeData={resumeData}
-              experienceId={id}
-            />
+            <Dropdown key={id} title={resumeData[id]["positionName"]}>
+              <ExperienceEdit
+                handleChange={handleChange}
+                resumeData={resumeData}
+                experienceId={id}
+              />
+            </Dropdown>
           );
         })}
         <button
@@ -133,15 +166,23 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
           Add New Experience
         </button>
       </Dropdown>
-      <Dropdown title="Projects" key="Projects">
+      <Dropdown
+        title="Projects"
+        key="Projects"
+        type="large"
+        // handleChange={openDropDown}
+        // dropDownId={"Projects"}
+        // visibility={openSectionDropDown === "Projects"}
+      >
         {resumeData.project.map((id) => {
           return (
-            <ProjectEdit
-              key={id}
-              handleChange={handleChange}
-              resumeData={resumeData}
-              projectId={id}
-            />
+            <Dropdown key={id} title={resumeData[id]["projectName"]}>
+              <ProjectEdit
+                handleChange={handleChange}
+                resumeData={resumeData}
+                projectId={id}
+              />
+            </Dropdown>
           );
         })}
         <button
@@ -162,7 +203,14 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
           Add New Project
         </button>
       </Dropdown>
-      <Dropdown title="Technical Skills" key="Technical Skills">
+      <Dropdown
+        title="Technical Skills"
+        key="Technical Skills"
+        type="large"
+        // handleChange={openDropDown}
+        // dropDownId={"Technical Skills"}
+        // visibility={openSectionDropDown === "Technical Skills"}
+      >
         <div>
           <label htmlFor="languages">Languages</label>
           <input
