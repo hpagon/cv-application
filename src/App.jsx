@@ -15,7 +15,7 @@ const emptyData = {
     devTools: 7,
     libraries: 8,
   },
-  school: [9],
+  school: [],
   experience: [],
   project: [],
   0: "",
@@ -27,7 +27,6 @@ const emptyData = {
   6: "",
   7: "",
   8: "",
-  9: { schoolName: "", major: "", time: "", location: "" },
 };
 
 function App() {

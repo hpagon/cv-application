@@ -1,3 +1,4 @@
+import DeleteButton from "./DeleteButton";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ProjectEdit({ handleChange, resumeData, projectId }) {
@@ -70,7 +71,7 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
               });
             }}
           >
-            Add new bullet point
+            +
           </button>
         </div>
         {resumeData[projectId]["description"]["map"]((id, index) => {
@@ -91,10 +92,23 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
                 }
                 value={resumeData[projectId][id]}
               />
+              <DeleteButton
+                resumeData={resumeData}
+                handleChange={handleChange}
+                itemId={projectId}
+                type={"project"}
+                descriptionId={id}
+              />
             </div>
           );
         })}
       </div>
+      <DeleteButton
+        resumeData={resumeData}
+        handleChange={handleChange}
+        itemId={projectId}
+        type={"project"}
+      />
     </div>
   );
 }

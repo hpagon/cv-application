@@ -1,3 +1,4 @@
+import DeleteButton from "./DeleteButton";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ExperienceEdit({
@@ -94,7 +95,7 @@ export default function ExperienceEdit({
               });
             }}
           >
-            Add new bullet point
+            +
           </button>
         </div>
         {resumeData[experienceId]["description"]["map"]((id, index) => {
@@ -115,10 +116,23 @@ export default function ExperienceEdit({
                 }
                 value={resumeData[experienceId][id]}
               />
+              <DeleteButton
+                resumeData={resumeData}
+                handleChange={handleChange}
+                itemId={experienceId}
+                type={"experience"}
+                descriptionId={id}
+              />
             </div>
           );
         })}
       </div>
+      <DeleteButton
+        resumeData={resumeData}
+        handleChange={handleChange}
+        itemId={experienceId}
+        type={"experience"}
+      />
     </div>
   );
 }

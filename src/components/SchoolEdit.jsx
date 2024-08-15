@@ -1,3 +1,5 @@
+import DeleteButton from "./DeleteButton";
+
 export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
   return (
     <div>
@@ -69,6 +71,12 @@ export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
           value={resumeData[schoolId]["time"]}
         />
       </div>
+      <DeleteButton
+        resumeData={resumeData}
+        handleChange={handleChange}
+        itemId={schoolId}
+        type={"school"}
+      />
     </div>
   );
 }
