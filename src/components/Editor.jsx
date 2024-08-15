@@ -120,7 +120,13 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
             handleChange({
               ...resumeData,
               school: [...resumeData.school, newId],
-              [newId]: { schoolName: "", major: "", location: "", time: "" },
+              [newId]: {
+                schoolName: "",
+                major: "",
+                location: "",
+                startDate: "",
+                endDate: "",
+              },
             });
           }}
         >
@@ -153,7 +159,8 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
               experience: [...resumeData.experience, newId],
               [newId]: {
                 positionName: "",
-                time: "",
+                startDate: "",
+                endDate: "",
                 organization: "",
                 location: "",
                 description: [],
@@ -191,7 +198,8 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
               [newId]: {
                 projectName: "",
                 tools: "",
-                time: "",
+                startDate: "",
+                endDate: "",
                 description: [],
               },
             });

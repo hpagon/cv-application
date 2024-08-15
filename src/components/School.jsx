@@ -1,18 +1,17 @@
-export default function School({
-  schoolName = "Example University",
-  major = "Bachelor of Science in Computer Science",
-  location = "Seattle, WA",
-  time = "Aug 2017 - May 2021",
-}) {
+export default function School({ school }) {
   return (
     <div>
       <div>
-        <h3>{schoolName}</h3>
-        <p>{location}</p>
+        <h3>{school.schoolName}</h3>
+        <p>{school.location}</p>
       </div>
       <div>
-        <p>{major}</p>
-        <p>{time}</p>
+        <p>{school.major}</p>
+        <p>
+          {school.startDate}{" "}
+          {school.startDate !== "" && school.endDate !== "" && "-"}{" "}
+          {school.endDate}
+        </p>
       </div>
     </div>
   );

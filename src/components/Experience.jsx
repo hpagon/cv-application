@@ -11,11 +11,16 @@ export default function Experience({
   //   description = defaultItems,
   experience,
 }) {
+  console.log(experience);
   return (
     <div>
       <div>
         <h3>{experience.positionName}</h3>
-        <p>{experience.time}</p>
+        <p>
+          {experience.startDate}{" "}
+          {experience.startDate !== "" && experience.endDate !== "" && "-"}{" "}
+          {experience.endDate}
+        </p>
       </div>
       <div>
         <p>{experience.organization}</p>

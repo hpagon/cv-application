@@ -39,20 +39,37 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
         />
       </div>
       <div>
-        <label htmlFor="time">Time</label>
+        <label htmlFor="startDate">Start Date</label>
         <input
           type="text"
-          name="time"
+          name="startDate"
           onChange={(e) =>
             handleChange({
               ...resumeData,
               [projectId]: {
                 ...resumeData[projectId],
-                time: e.target.value,
+                startDate: e.target.value,
               },
             })
           }
-          value={resumeData[projectId]["time"]}
+          value={resumeData[projectId]["startDate"]}
+        />
+      </div>
+      <div>
+        <label htmlFor="endDate">End Date</label>
+        <input
+          type="text"
+          name="endDate"
+          onChange={(e) =>
+            handleChange({
+              ...resumeData,
+              [projectId]: {
+                ...resumeData[projectId],
+                endDate: e.target.value,
+              },
+            })
+          }
+          value={resumeData[projectId]["endDate"]}
         />
       </div>
       <div>

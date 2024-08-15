@@ -26,20 +26,37 @@ export default function ExperienceEdit({
         />
       </div>
       <div>
-        <label htmlFor="time">Years</label>
+        <label htmlFor="startDate">Start Date</label>
         <input
           type="text"
-          name="time"
+          name="startDate"
           onChange={(e) =>
             handleChange({
               ...resumeData,
               [experienceId]: {
                 ...resumeData[experienceId],
-                time: e.target.value,
+                startDate: e.target.value,
               },
             })
           }
-          value={resumeData[experienceId]["time"]}
+          value={resumeData[experienceId]["startDate"]}
+        />
+      </div>
+      <div>
+        <label htmlFor="endDate">End Date</label>
+        <input
+          type="text"
+          name="endDate"
+          onChange={(e) =>
+            handleChange({
+              ...resumeData,
+              [experienceId]: {
+                ...resumeData[experienceId],
+                endDate: e.target.value,
+              },
+            })
+          }
+          value={resumeData[experienceId]["endDate"]}
         />
       </div>
       <div>

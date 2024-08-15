@@ -55,20 +55,37 @@ export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
         />
       </div>
       <div>
-        <label htmlFor="time">Years</label>
+        <label htmlFor="startDate">Start Date</label>
         <input
           type="text"
-          name="time"
+          name="startDate"
           onChange={(e) =>
             handleChange({
               ...resumeData,
               [schoolId]: {
                 ...resumeData[schoolId],
-                time: e.target.value,
+                startDate: e.target.value,
               },
             })
           }
-          value={resumeData[schoolId]["time"]}
+          value={resumeData[schoolId]["startDate"]}
+        />
+      </div>
+      <div>
+        <label htmlFor="endDate">End Date</label>
+        <input
+          type="text"
+          name="endDate"
+          onChange={(e) =>
+            handleChange({
+              ...resumeData,
+              [schoolId]: {
+                ...resumeData[schoolId],
+                endDate: e.target.value,
+              },
+            })
+          }
+          value={resumeData[schoolId]["endDate"]}
         />
       </div>
       <DeleteButton

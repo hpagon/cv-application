@@ -17,15 +17,7 @@ function Resume({ resumeData }) {
       />
       <Section title={"Education"}>
         {resumeData.school.map((schoolId) => {
-          return (
-            <School
-              key={schoolId}
-              schoolName={resumeData[schoolId]["schoolName"]}
-              location={resumeData[schoolId]["location"]}
-              major={resumeData[schoolId]["major"]}
-              time={resumeData[schoolId]["time"]}
-            />
-          );
+          return <School key={schoolId} school={resumeData[schoolId]} />;
         })}
       </Section>
       <Section title={"Experience"}>
