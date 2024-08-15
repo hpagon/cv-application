@@ -6,24 +6,24 @@ import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 
 export default function Editor({ handleChange, resumeData, handleInsert }) {
-  //   const [openSectionDropDown, setOpenSectionDropDown] = useState("");
+  //keeps track of which root dropdown is open (only one can be open at a time)
+  const [open, setOpen] = useState("");
 
-  //   function openDropDown(id) {
-  //     if (openSectionDropDown === id) {
-  //       setOpenSectionDropDown("");
-  //       return;
-  //     }
-  //     setOpenSectionDropDown(id);
-  //   }
+  function openDropDown(id) {
+    if (open === id) {
+      setOpen("");
+      return;
+    }
+    setOpen(id);
+  }
   return (
     <div>
       <Dropdown
         title="Personal"
         key="Personal"
         type="large"
-        // handleChange={openDropDown}
-        // dropDownId={"Personal"}
-        // visibility={openSectionDropDown === "Personal"}
+        open={open === "Personal"}
+        handleOpen={openDropDown}
       >
         <div>
           <label htmlFor="fullName">Full Name</label>
@@ -100,9 +100,8 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
         title="Education"
         key="Education"
         type="large"
-        // handleChange={openDropDown}
-        // dropDownId={"Education"}
-        // visibility={openSectionDropDown === "Education"}
+        open={open === "Education"}
+        handleOpen={openDropDown}
       >
         {resumeData.school.map((id) => {
           return (
@@ -132,9 +131,8 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
         title="Experience"
         key="Experience"
         type="large"
-        // handleChange={openDropDown}
-        // dropDownId={"Experience"}
-        // visibility={openSectionDropDown === "Experience"}
+        open={open === "Experience"}
+        handleOpen={openDropDown}
       >
         {resumeData.experience.map((id) => {
           return (
@@ -170,9 +168,8 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
         title="Projects"
         key="Projects"
         type="large"
-        // handleChange={openDropDown}
-        // dropDownId={"Projects"}
-        // visibility={openSectionDropDown === "Projects"}
+        open={open === "Projects"}
+        handleOpen={openDropDown}
       >
         {resumeData.project.map((id) => {
           return (
@@ -207,9 +204,8 @@ export default function Editor({ handleChange, resumeData, handleInsert }) {
         title="Technical Skills"
         key="Technical Skills"
         type="large"
-        // handleChange={openDropDown}
-        // dropDownId={"Technical Skills"}
-        // visibility={openSectionDropDown === "Technical Skills"}
+        open={open === "Technical Skills"}
+        handleOpen={openDropDown}
       >
         <div>
           <label htmlFor="languages">Languages</label>
