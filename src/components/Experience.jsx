@@ -1,5 +1,4 @@
 export default function Experience({ experience }) {
-  console.log(experience);
   return (
     <div>
       <div>
