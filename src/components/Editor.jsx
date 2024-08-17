@@ -7,14 +7,23 @@ import { useState } from "react";
 
 export default function Editor({ handleChange, resumeData }) {
   //keeps track of which root dropdown is open (only one can be open at a time)
-  const [open, setOpen] = useState("");
+  const [largeOpen, setLargeOpen] = useState("");
+  const [mediumOpen, setMediumOpen] = useState("");
 
-  function openDropDown(id) {
-    if (open === id) {
-      setOpen("");
-      return;
+  function openDropDown(id, type) {
+    if (type === "large") {
+      if (largeOpen === id) {
+        setLargeOpen("");
+        return;
+      }
+      setLargeOpen(id);
+    } else {
+      if (mediumOpen === id) {
+        setMediumOpen("");
+        return;
+      }
+      setMediumOpen(id);
     }
-    setOpen(id);
   }
   return (
     <div>
@@ -22,8 +31,9 @@ export default function Editor({ handleChange, resumeData }) {
         title="Personal"
         key="Personal"
         type="large"
-        open={open === "Personal"}
+        open={largeOpen === "Personal"}
         handleOpen={openDropDown}
+        dropdownId={"Personal"}
       >
         <div>
           <label htmlFor="fullName">Full Name</label>
@@ -126,12 +136,19 @@ export default function Editor({ handleChange, resumeData }) {
         title="Education"
         key="Education"
         type="large"
-        open={open === "Education"}
+        open={largeOpen === "Education"}
         handleOpen={openDropDown}
+        dropdownId={"Education"}
       >
         {resumeData.school.map((id) => {
           return (
-            <Dropdown title={resumeData[id]["schoolName"]} key={id}>
+            <Dropdown
+              title={resumeData[id]["schoolName"]}
+              key={id}
+              open={mediumOpen === id}
+              handleOpen={openDropDown}
+              dropdownId={id}
+            >
               <SchoolEdit
                 handleChange={handleChange}
                 resumeData={resumeData}
@@ -163,12 +180,19 @@ export default function Editor({ handleChange, resumeData }) {
         title="Experience"
         key="Experience"
         type="large"
-        open={open === "Experience"}
+        open={largeOpen === "Experience"}
         handleOpen={openDropDown}
+        dropdownId={"Experience"}
       >
         {resumeData.experience.map((id) => {
           return (
-            <Dropdown key={id} title={resumeData[id]["positionName"]}>
+            <Dropdown
+              key={id}
+              title={resumeData[id]["positionName"]}
+              handleOpen={openDropDown}
+              open={mediumOpen === id}
+              dropdownId={id}
+            >
               <ExperienceEdit
                 handleChange={handleChange}
                 resumeData={resumeData}
@@ -201,12 +225,19 @@ export default function Editor({ handleChange, resumeData }) {
         title="Projects"
         key="Projects"
         type="large"
-        open={open === "Projects"}
+        open={largeOpen === "Projects"}
         handleOpen={openDropDown}
+        dropdownId={"Projects"}
       >
         {resumeData.project.map((id) => {
           return (
-            <Dropdown key={id} title={resumeData[id]["projectName"]}>
+            <Dropdown
+              key={id}
+              title={resumeData[id]["projectName"]}
+              open={mediumOpen === id}
+              handleOpen={openDropDown}
+              dropdownId={id}
+            >
               <ProjectEdit
                 handleChange={handleChange}
                 resumeData={resumeData}
@@ -238,8 +269,9 @@ export default function Editor({ handleChange, resumeData }) {
         title="Technical Skills"
         key="Technical Skills"
         type="large"
-        open={open === "Technical Skills"}
+        open={largeOpen === "Technical Skills"}
         handleOpen={openDropDown}
+        dropdownId={"Technical Skills"}
       >
         <div>
           <label htmlFor="languages">Languages</label>
