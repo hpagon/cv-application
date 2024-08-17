@@ -45,21 +45,21 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+/* button:hover {
   border-color: #646cff;
-}
+} */
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto #213547;
 }
 
 #container {
   display: flex;
 }
 
-/* #root {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 60px 1fr;
+#root {
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-rows: 60px 1fr; */
   min-height: 100vh;
-} */
+}

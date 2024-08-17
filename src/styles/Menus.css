@@ -2,7 +2,6 @@
   grid-column: 1 / 3;
   display: flex;
   justify-content: center;
-  /* border-bottom: 1px solid gray; */
   background-color: #ffffff;
   box-shadow: 0 0 1px black;
   width: 100%;
@@ -28,15 +27,26 @@
 /* buttons container */
 #menu > div > div {
   width: 300px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* button styles */
 #menu > div > div > button {
   border-radius: 10px;
-  /* background-color: gray; */
+  background: none;
 }
-/* @media (min-width: 1230px) {
-  #menu {
-    padding: 0px calc(100% - 1230px);
-  } */
-/* } */
+
+#menu > div > div > button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#menu > div > div > button:nth-child(3) {
+  background-color: #213547;
+  color: white;
+}
+
+#menu > div > div > button:nth-child(3):hover {
+  /* background-color: rgba(265, 265, 265, 0.9); */
+  opacity: 0.9;
+}
