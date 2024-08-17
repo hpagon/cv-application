@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/Dropdown.css";
 
 export default function Dropdown({
   title,
@@ -17,7 +18,7 @@ export default function Dropdown({
   };
 
   return (
-    <div>
+    <div className={"dropdown " + type}>
       <div>
         {header()}
         <button
@@ -29,7 +30,10 @@ export default function Dropdown({
             }
           }}
         >
-          {visibility ? "^" : "˅"}
+          {/* {console.log(type)}
+          {type === "large" && open ? "^" : "˅"}
+          {type === "medium" && visibility ? "^" : "˅"} */}
+          {type === "large" ? (open ? "^" : "˅") : visibility ? "^" : "˅"}
         </button>
       </div>
       <div>
