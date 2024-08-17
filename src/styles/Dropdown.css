@@ -15,6 +15,10 @@
   margin: 1.5em 0;
 }
 
+.dropdown.large.open {
+  box-shadow: 0 0 3px #646cff;
+}
+
 /* medium dropdown styles */
 .dropdown.medium {
   /* background-color: blue; */
@@ -54,4 +58,8 @@
 .dropdown h2 {
   font-size: 1.3em;
   margin: 0;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: cut;
+  border: 1px black;
 }

@@ -50,12 +50,18 @@ button {
 } */
 button:focus,
 button:focus-visible {
-  outline: 4px auto #213547;
+  /* outline: 4px auto #213547; */
 }
 
 #container {
   display: flex;
   justify-content: space-around;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+}
+
+#container > div {
+  max-width: 600px;
 }
 
 #root {

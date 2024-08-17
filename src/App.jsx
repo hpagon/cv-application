@@ -14,8 +14,12 @@ function App() {
     <>
       <Menu handleChange={editResumeData} />
       <div id="container">
-        <Editor handleChange={editResumeData} resumeData={resumeData} />
-        <Resume resumeData={resumeData} />
+        <div>
+          <Editor handleChange={editResumeData} resumeData={resumeData} />
+        </div>
+        <div>
+          <Resume resumeData={resumeData} />
+        </div>
       </div>
     </>
   );
