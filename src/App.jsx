@@ -10,12 +10,13 @@ function App() {
 
   const editResumeData = (newData) => setResumeData(newData);
 
-  console.log(resumeData);
   return (
     <>
       <Menu handleChange={editResumeData} />
-      <Editor handleChange={editResumeData} resumeData={resumeData} />
-      <Resume resumeData={resumeData} />
+      <div id="container">
+        <Editor handleChange={editResumeData} resumeData={resumeData} />
+        <Resume resumeData={resumeData} />
+      </div>
     </>
   );
 }
