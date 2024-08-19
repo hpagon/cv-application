@@ -4,10 +4,11 @@ import School from "./School";
 import Experience from "./Experience";
 import Project from "./Project";
 import Skill from "./Skill";
+import "../styles/Resume.css";
 
 function Resume({ resumeData }) {
   return (
-    <div>
+    <div id="resume">
       <Header
         fullName={resumeData[resumeData.id.fullName]}
         phoneNumber={resumeData[resumeData.id.phoneNumber]}

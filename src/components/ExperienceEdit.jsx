@@ -141,6 +141,8 @@ export default function ExperienceEdit({
               key={id}
               onMouseOver={() => showDescriptionDeleteButton(id)}
               onMouseLeave={() => hideDescriptionDeletebutton(id)}
+              onBlur={() => hideDescriptionDeletebutton(id)}
+              onFocus={() => showDescriptionDeleteButton(id)}
             >
               <input
                 type="text"
@@ -155,8 +157,6 @@ export default function ExperienceEdit({
                   })
                 }
                 value={resumeData[experienceId][id]}
-                onBlur={() => hideDescriptionDeletebutton(id)}
-                onFocus={() => showDescriptionDeleteButton(id)}
               />
               <DeleteButton
                 resumeData={resumeData}

@@ -1,0 +1,11 @@
+:root {
+  --resume-width: 40rem;
+}
+
+#resume {
+  margin-top: 1.5rem;
+  width: var(--resume-width);
+  min-height: calc(var(--resume-width) / 8.5 * 11);
+  /* border: 1px solid black; */
+  box-shadow: 0 0 5px black;
+}

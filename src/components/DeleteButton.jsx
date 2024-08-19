@@ -1,5 +1,4 @@
 import Trash from "../assets/trash.svg";
-import Close from "../assets/close.svg";
 
 //this component returns a button that deletes the data for the parent edit component from resumeData
 export default function DeleteButton({
