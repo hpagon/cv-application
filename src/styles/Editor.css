@@ -1,0 +1,80 @@
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input label,
+.description p {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.input input,
+.description input {
+  width: 95%;
+  height: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.6rem;
+  border: 1px solid gray;
+  outline: none;
+  box-sizing: border-box;
+  padding-left: 0.7rem;
+}
+
+.input input:focus {
+  outline: 1px auto #646cff;
+  box-shadow: 0 0 1px black;
+}
+
+.add,
+.delete {
+  background-color: #213547;
+  color: white;
+  margin: 0.3rem 0;
+}
+
+.add:hover {
+  opacity: 0.9;
+}
+
+.delete {
+  background-color: red;
+}
+
+.delete:hover {
+  background-color: rgba(265, 0, 0, 0.8);
+}
+
+.description > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+
+.description > div:nth-child(n + 2) {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.description input {
+  margin: 0;
+}
+
+.description > div:nth-child(1) button {
+  margin-left: 0.5rem;
+}
+
+.description > div button {
+  padding: 0.3rem 0.5rem;
+}
+
+.description .delete {
+  background: none;
+  position: absolute;
+  /* top: -0.1rem; */
+  /* right: -1rem; */
+  margin: 0;
+}
+
+.description .delete img {
+  height: 1.5rem;
+}

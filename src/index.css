@@ -53,11 +53,13 @@ button:focus-visible {
   /* outline: 4px auto #213547; */
 }
 
+button:active {
+  scale: 0.95;
+}
+
 #container {
   display: flex;
   justify-content: space-around;
-  /* display: grid; */
-  /* grid-template-columns: 1fr 1fr; */
 }
 
 #container > div {
@@ -65,8 +67,5 @@ button:focus-visible {
 }
 
 #root {
-  /* display: grid; */
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-rows: 60px 1fr; */
   min-height: 100vh;
 }

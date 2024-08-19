@@ -1,6 +1,5 @@
 .dropdown {
-  box-shadow: 0 0 1px black;
-  border-radius: 12px;
+  /* box-shadow: 0 0 2px black; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,12 +10,14 @@
 /* large dropdown styles */
 .dropdown.large {
   /* background-color: red; */
+  border-radius: 12px;
+  box-shadow: 0 0 3px black;
   width: clamp(500px, 20%, 280px);
   margin: 1.5em 0;
 }
 
 .dropdown.large.open {
-  box-shadow: 0 0 3px #646cff;
+  /* box-shadow: 0 0 3px #646cff; */
 }
 
 /* medium dropdown styles */
@@ -24,6 +25,7 @@
   /* background-color: blue; */
   width: 100%;
   margin: 0.8em 0;
+  border-bottom: 1px solid gray;
 }
 
 .dropdown.medium.visible > div:nth-child(1) {
@@ -60,6 +62,6 @@
   margin: 0;
   text-wrap: nowrap;
   overflow: hidden;
-  text-overflow: cut;
+  text-overflow: ellipsis;
   border: 1px black;
 }

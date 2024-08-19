@@ -4,6 +4,7 @@ import ExperienceEdit from "./ExperienceEdit";
 import ProjectEdit from "./ProjectEdit";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
+import "../styles/Editor.css";
 
 export default function Editor({ handleChange, resumeData }) {
   //keeps track of which root dropdown is open (only one can be open at a time)
@@ -35,7 +36,7 @@ export default function Editor({ handleChange, resumeData }) {
         handleOpen={openDropDown}
         dropdownId={"Personal"}
       >
-        <div>
+        <div className="input">
           <label htmlFor="fullName">Full Name</label>
           <input
             type="text"
@@ -49,7 +50,7 @@ export default function Editor({ handleChange, resumeData }) {
             value={resumeData[resumeData.id.fullName]}
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="phoneNumber">Phone Number</label>
           <input
             type="tel"
@@ -63,7 +64,7 @@ export default function Editor({ handleChange, resumeData }) {
             value={resumeData[resumeData.id.phoneNumber]}
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -77,7 +78,7 @@ export default function Editor({ handleChange, resumeData }) {
             value={resumeData[resumeData.id.email]}
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="linkedIn">LinkedIn</label>
           <input
             type="text"
@@ -104,7 +105,7 @@ export default function Editor({ handleChange, resumeData }) {
             placeholder="https://www.linkedin.com/"
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="github">GitHub</label>
           <input
             type="text"
@@ -158,6 +159,7 @@ export default function Editor({ handleChange, resumeData }) {
           );
         })}
         <button
+          className="add"
           onClick={() => {
             const newId = uuidv4();
             handleChange({
@@ -202,6 +204,7 @@ export default function Editor({ handleChange, resumeData }) {
           );
         })}
         <button
+          className="add"
           onClick={() => {
             const newId = uuidv4();
             handleChange({
@@ -247,6 +250,7 @@ export default function Editor({ handleChange, resumeData }) {
           );
         })}
         <button
+          className="add"
           onClick={() => {
             const newId = uuidv4();
             handleChange({
@@ -273,7 +277,7 @@ export default function Editor({ handleChange, resumeData }) {
         handleOpen={openDropDown}
         dropdownId={"Technical Skills"}
       >
-        <div>
+        <div className="input">
           <label htmlFor="languages">Languages</label>
           <input
             type="text"
@@ -287,7 +291,7 @@ export default function Editor({ handleChange, resumeData }) {
             value={resumeData[resumeData.id.languages]}
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="frameworks">Frameworks</label>
           <input
             type="text"
@@ -301,7 +305,7 @@ export default function Editor({ handleChange, resumeData }) {
             value={resumeData[resumeData.id.frameworks]}
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="devTools">Developer Tools</label>
           <input
             type="text"
@@ -315,7 +319,7 @@ export default function Editor({ handleChange, resumeData }) {
             value={resumeData[resumeData.id.devTools]}
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="libraries">Libraries</label>
           <input
             type="text"

@@ -73,6 +73,9 @@ const sampleData = {
     1: "Developed a custom cli tool for in house operations with Bash",
     2: "Improved data retrieval speeds by 20%",
     3: "Attendly daily standups",
+    visibility1: "hidden",
+    visibility2: "hidden",
+    visibility3: "hidden",
   },
   13: {
     projectName: "CV Builder",
@@ -83,6 +86,9 @@ const sampleData = {
     1: "Created a simple application to create custom CV's",
     2: "Used React to construct application and Vite to bundle it",
     3: "Developed a feature to turn CV into PDF for download",
+    visibility1: "hidden",
+    visibility2: "hidden",
+    visibility3: "hidden",
   },
 };
 

@@ -3,7 +3,7 @@ import DeleteButton from "./DeleteButton";
 export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
   return (
     <div>
-      <div>
+      <div className="input">
         <label htmlFor="schoolName">School Name</label>
         <input
           type="text"
@@ -20,7 +20,7 @@ export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
           value={resumeData[schoolId]["schoolName"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="location">Location</label>
         <input
           type="text"
@@ -37,7 +37,7 @@ export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
           value={resumeData[schoolId]["location"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="major">Major</label>
         <input
           type="text"
@@ -54,7 +54,7 @@ export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
           value={resumeData[schoolId]["major"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="startDate">Start Date</label>
         <input
           type="text"
@@ -71,7 +71,7 @@ export default function SchoolEdit({ handleChange, resumeData, schoolId }) {
           value={resumeData[schoolId]["startDate"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="endDate">End Date</label>
         <input
           type="text"

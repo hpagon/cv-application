@@ -2,9 +2,27 @@ import DeleteButton from "./DeleteButton";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ProjectEdit({ handleChange, resumeData, projectId }) {
+  function showDescriptionDeleteButton(id) {
+    handleChange({
+      ...resumeData,
+      [projectId]: {
+        ...resumeData[projectId],
+        ["visibility" + id]: "visible",
+      },
+    });
+  }
+  function hideDescriptionDeletebutton(id) {
+    handleChange({
+      ...resumeData,
+      [projectId]: {
+        ...resumeData[projectId],
+        ["visibility" + id]: "hidden",
+      },
+    });
+  }
   return (
     <div>
-      <div>
+      <div className="input">
         <label htmlFor="projectName">Project Name</label>
         <input
           type="text"
@@ -21,7 +39,7 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
           value={resumeData[projectId]["projectName"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="tools">Tools</label>
         <input
           type="text"
@@ -38,7 +56,7 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
           value={resumeData[projectId]["tools"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="startDate">Start Date</label>
         <input
           type="text"
@@ -55,7 +73,7 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
           value={resumeData[projectId]["startDate"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="endDate">End Date</label>
         <input
           type="text"
@@ -72,10 +90,11 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
           value={resumeData[projectId]["endDate"]}
         />
       </div>
-      <div>
+      <div className="description">
         <div>
           <p htmlFor="description">Bullet Points</p>
           <button
+            className="add"
             onClick={() => {
               const newId = uuidv4();
               handleChange({
@@ -84,17 +103,21 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
                   ...resumeData[projectId],
                   description: [...resumeData[projectId]["description"], newId],
                   [newId]: "",
+                  ["visibility" + newId]: "hidden",
                 },
               });
             }}
           >
-            +
+            Add
           </button>
         </div>
-        {resumeData[projectId]["description"]["map"]((id, index) => {
+        {resumeData[projectId]["description"]["map"]((id) => {
           return (
-            <div key={id}>
-              <label htmlFor="description">{index + 1}. </label>
+            <div
+              key={id} //make delete button for bullet point visible
+              onMouseEnter={() => showDescriptionDeleteButton(id)}
+              onMouseLeave={() => hideDescriptionDeletebutton(id)}
+            >
               <input
                 type="text"
                 name="description"
@@ -108,6 +131,8 @@ export default function ProjectEdit({ handleChange, resumeData, projectId }) {
                   })
                 }
                 value={resumeData[projectId][id]}
+                onBlur={() => hideDescriptionDeletebutton(id)}
+                onFocus={() => showDescriptionDeleteButton(id)}
               />
               <DeleteButton
                 resumeData={resumeData}

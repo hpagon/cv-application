@@ -1,3 +1,6 @@
+import Trash from "../assets/trash.svg";
+import Close from "../assets/close.svg";
+
 //this component returns a button that deletes the data for the parent edit component from resumeData
 export default function DeleteButton({
   type,
@@ -15,11 +18,20 @@ export default function DeleteButton({
     } else {
       //if descriptionId exists that means we need to delete a bullet point
       delete newObject[itemId][descriptionId];
+      delete newObject[itemId]["visibility" + descriptionId];
       newObject[itemId]["description"] = newObject[itemId]["description"][
         "filter"
       ]((id) => id !== descriptionId);
     }
     handleChange(newObject);
   }
-  return <button onClick={performDelete}>Delete</button>;
+  const style = {
+    visibility: resumeData[itemId]["visibility" + descriptionId],
+  };
+  return (
+    <button style={style} className="delete" onClick={performDelete}>
+      {descriptionId === null && "Delete"}
+      {descriptionId !== null && <img src={Trash} alt="Trash Icon" />}
+    </button>
+  );
 }

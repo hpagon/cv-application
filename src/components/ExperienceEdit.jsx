@@ -6,9 +6,27 @@ export default function ExperienceEdit({
   resumeData,
   experienceId,
 }) {
+  function showDescriptionDeleteButton(id) {
+    handleChange({
+      ...resumeData,
+      [experienceId]: {
+        ...resumeData[experienceId],
+        ["visibility" + id]: "visible",
+      },
+    });
+  }
+  function hideDescriptionDeletebutton(id) {
+    handleChange({
+      ...resumeData,
+      [experienceId]: {
+        ...resumeData[experienceId],
+        ["visibility" + id]: "hidden",
+      },
+    });
+  }
   return (
     <div>
-      <div>
+      <div className="input">
         <label htmlFor="positionName">Position Name</label>
         <input
           type="text"
@@ -25,7 +43,7 @@ export default function ExperienceEdit({
           value={resumeData[experienceId]["positionName"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="startDate">Start Date</label>
         <input
           type="text"
@@ -42,7 +60,7 @@ export default function ExperienceEdit({
           value={resumeData[experienceId]["startDate"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="endDate">End Date</label>
         <input
           type="text"
@@ -59,7 +77,7 @@ export default function ExperienceEdit({
           value={resumeData[experienceId]["endDate"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="organization">Organization Name</label>
         <input
           type="text"
@@ -76,7 +94,7 @@ export default function ExperienceEdit({
           value={resumeData[experienceId]["organization"]}
         />
       </div>
-      <div>
+      <div className="input">
         <label htmlFor="location">Location</label>
         <input
           type="text"
@@ -93,10 +111,11 @@ export default function ExperienceEdit({
           value={resumeData[experienceId]["location"]}
         />
       </div>
-      <div>
+      <div className="description">
         <div>
           <p htmlFor="description">Bullet Points</p>
           <button
+            className="add"
             onClick={() => {
               const newId = uuidv4();
               handleChange({
@@ -108,17 +127,21 @@ export default function ExperienceEdit({
                     newId,
                   ],
                   [newId]: "",
+                  ["visibility" + newId]: "hidden",
                 },
               });
             }}
           >
-            +
+            Add
           </button>
         </div>
-        {resumeData[experienceId]["description"]["map"]((id, index) => {
+        {resumeData[experienceId]["description"]["map"]((id) => {
           return (
-            <div key={id}>
-              <label htmlFor="description">{index + 1}. </label>
+            <div
+              key={id}
+              onMouseOver={() => showDescriptionDeleteButton(id)}
+              onMouseLeave={() => hideDescriptionDeletebutton(id)}
+            >
               <input
                 type="text"
                 name="description"
@@ -132,6 +155,8 @@ export default function ExperienceEdit({
                   })
                 }
                 value={resumeData[experienceId][id]}
+                onBlur={() => hideDescriptionDeletebutton(id)}
+                onFocus={() => showDescriptionDeleteButton(id)}
               />
               <DeleteButton
                 resumeData={resumeData}
