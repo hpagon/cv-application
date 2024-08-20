@@ -1,6 +1,8 @@
+import "../styles/School.css";
+
 export default function School({ school }) {
   return (
-    <div>
+    <div className="school">
       <div>
         <h3>{school.schoolName}</h3>
         <p>{school.location}</p>

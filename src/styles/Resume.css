@@ -3,9 +3,17 @@
 }
 
 #resume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 1.5rem;
   width: var(--resume-width);
   min-height: calc(var(--resume-width) / 8.5 * 11);
-  /* border: 1px solid black; */
   box-shadow: 0 0 5px black;
+}
+
+h1,
+p,
+h3 {
+  word-break: break-all;
 }

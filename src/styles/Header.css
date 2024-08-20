@@ -2,20 +2,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 #header h1 {
+  text-wrap: wrap;
+  text-align: center;
   font-size: 2rem;
-  width: max-content;
-  max-width: 100%;
+  max-width: 80%;
+  margin: 1.5rem 0 0.3rem 0;
 }
 
 #header > div {
   display: flex;
+  max-width: 90%;
 }
 
 #header p {
   font-size: 0.7rem;
   margin: 0 0.1rem;
   font-weight: 600;
+  text-align: center;
 }

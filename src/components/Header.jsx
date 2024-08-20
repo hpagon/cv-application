@@ -13,15 +13,13 @@ export default function Header({
     <div id="header">
       <h1>{fullName}</h1>
       <div>
-        <p>{phoneNumber}</p>
-        {phoneNumber && (email || linkedIn || github) && <p>|</p>}
-        <p>{email}</p>
-        {email && linkedIn && <p>|</p>}
         <p>
+          {phoneNumber}
+          {phoneNumber && (email || linkedIn || github) && " | "}
+          {email}
+          {email && linkedIn && " | "}
           <a href={linkedInUrl}>{linkedIn}</a>
-        </p>
-        {(phoneNumber || email || linkedIn) && github && <p>|</p>}
-        <p>
+          {(phoneNumber || email || linkedIn) && github && " | "}
           <a href={githubUrl}>{github}</a>
         </p>
       </div>
