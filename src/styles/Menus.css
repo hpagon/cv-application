@@ -8,6 +8,7 @@
   height: 3.5em;
   position: sticky;
   top: 0px;
+  background-color: #f8f9fa;
 }
 
 #menu > div {
@@ -21,7 +22,7 @@
 /* header styles */
 #menu div h1 {
   margin: 0px;
-  font-size: 1.6em;
+  font-size: 2rem;
 }
 
 /* buttons container */

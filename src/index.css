@@ -10,6 +10,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
 }
 
 a {
@@ -27,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #f8f9fa;
 }
 
 h1 {
@@ -45,25 +47,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-/* button:hover {
-  border-color: #646cff;
-} */
-button:focus,
-button:focus-visible {
-  /* outline: 4px auto #213547; */
-}
 
 button:active {
   scale: 0.95;
-}
-
-#container {
-  display: flex;
-  justify-content: space-around;
-}
-
-#container > div {
-  max-width: 600px;
 }
 
 #root {

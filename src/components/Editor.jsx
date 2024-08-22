@@ -27,7 +27,7 @@ export default function Editor({ handleChange, resumeData }) {
     }
   }
   return (
-    <div>
+    <div id="editor">
       <Dropdown
         title="Personal"
         key="Personal"

@@ -1,3 +1,7 @@
+#editor {
+  width: 26rem;
+}
+
 .input {
   display: flex;
   flex-direction: column;
