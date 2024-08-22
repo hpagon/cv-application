@@ -1,9 +1,16 @@
+import "../styles/Project.css";
+
 export default function Project({ project }) {
   return (
-    <div>
+    <div className="project">
       <div>
-        <h4>{project.projectName}</h4>
-        <p>{project.tools}</p>
+        <div>
+          <h4>{project.projectName + " "}</h4>
+          <p>
+            {project.tools && " | "}
+            {project.tools}
+          </p>
+        </div>
         <p>
           {project.startDate}{" "}
           {project.startDate !== "" && project.endDate !== "" && "-"}{" "}

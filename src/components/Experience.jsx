@@ -1,6 +1,8 @@
+import "../styles/Experience.css";
+
 export default function Experience({ experience }) {
   return (
-    <div>
+    <div className="experience">
       <div>
         <h3>{experience.positionName}</h3>
         <p>

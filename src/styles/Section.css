@@ -3,19 +3,45 @@
 }
 
 .section h2 {
-  margin: 0.3rem 0 0 0;
-  font-size: 1.05rem;
+  margin: 0.4rem 0 0 0;
+  font-size: 0.9rem;
+}
+
+.section > div {
+  box-sizing: border-box;
+  padding: 0 0.7rem;
+}
+
+.section > div > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section hr {
+  margin: 0.2rem;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 h3,
-p {
+p,
+ul,
+h4 {
   margin: 0;
 }
 
-p {
+p,
+li {
+  font-size: 0.7rem;
+}
+
+ul {
+  padding-left: 2rem;
   font-size: 0.8rem;
+}
+
+li::marker {
+  font-size: 0.7rem;
 }

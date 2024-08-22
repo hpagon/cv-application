@@ -1,0 +1,8 @@
+.project > div:nth-child(1) > div {
+  display: flex;
+  align-items: center;
+}
+
+.project h4 {
+  font-size: 0.75rem;
+}
