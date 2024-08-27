@@ -1,7 +1,7 @@
 import { emptyData, sampleData } from "../initialData";
 import "../styles/Menus.css";
 
-export default function Menu({ handleChange }) {
+export default function Menu({ handleChange, handlePrint }) {
   return (
     <div id="menu">
       <div>
@@ -21,7 +21,7 @@ export default function Menu({ handleChange }) {
           >
             Fill
           </button>
-          <button>Download</button>
+          <button onClick={handlePrint}>Download</button>
         </div>
       </div>
     </div>

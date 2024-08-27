@@ -19,7 +19,7 @@ export default function Dropdown({
   };
 
   return (
-    <div className={"dropdown " + type + (open ? " open" : "")}>
+    <div className={"dropdown " + type + (open ? " open" : "  ")}>
       <div>
         {header()}
         <button

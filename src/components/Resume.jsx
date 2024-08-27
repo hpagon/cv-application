@@ -5,10 +5,11 @@ import Experience from "./Experience";
 import Project from "./Project";
 import Skill from "./Skill";
 import "../styles/Resume.css";
+import * as React from "react";
 
-function Resume({ resumeData }) {
+const Resume = React.forwardRef(({ resumeData }, ref) => {
   return (
-    <div id="resume">
+    <div id="resume" ref={ref}>
       <Header
         fullName={resumeData[resumeData.id.fullName]}
         phoneNumber={resumeData[resumeData.id.phoneNumber]}
@@ -44,6 +45,7 @@ function Resume({ resumeData }) {
       </Section>
     </div>
   );
-}
+});
+Resume.displayName = "Resume";
 
 export { Resume };

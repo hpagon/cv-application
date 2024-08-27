@@ -9,7 +9,7 @@
 #header h1 {
   text-wrap: wrap;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   max-width: 80%;
   margin: 1.5rem 0 0.3rem 0;
 }
@@ -20,7 +20,7 @@
 }
 
 #header p {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   margin: 0 0.1rem;
   font-weight: 600;
   text-align: center;

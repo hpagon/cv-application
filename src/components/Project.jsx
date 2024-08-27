@@ -7,6 +7,7 @@ export default function Project({ project }) {
         <div>
           <h4>{project.projectName + " "}</h4>
           <p>
+            {project.tools && " "}
             {project.tools && " | "}
             {project.tools}
           </p>

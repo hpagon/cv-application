@@ -47,9 +47,12 @@
 }
 
 #container {
+  /* justify-self: center;   */
+  /* align-self: center; */
   display: flex;
   justify-content: space-around;
   margin-bottom: 3rem;
+  /* max-width: 1600px; */
 }
 
 #container > div {
