@@ -4,6 +4,7 @@
 
 #resume-container {
   box-shadow: 0 0 5px gray;
+  margin-top: 1.5em;
 }
 
 #resume {
@@ -12,7 +13,7 @@
   align-items: center;
   /* margin-top: 1.5rem; */
   width: var(--resume-width);
-  min-height: calc(var(--resume-width) / 8.5 * 10.5);
+  min-height: calc(var(--resume-width) / 8.5 * 11);
   background-color: white;
   flex-grow: 1;
 }

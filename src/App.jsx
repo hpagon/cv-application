@@ -15,6 +15,9 @@ function App() {
       margin: 0mm;
     }
     @media print {
+      :root {
+        font-size: 22px;
+      }
       #resume {
         height: 100vh;
       }
