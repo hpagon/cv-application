@@ -27,7 +27,7 @@
 
 /* buttons container */
 #menu > div > div {
-  width: 300px;
+  width: 20rem;
   display: flex;
   justify-content: space-evenly;
 }
@@ -49,4 +49,10 @@
 
 #menu > div > div > button:nth-child(3):hover {
   opacity: 0.9;
+}
+
+@media (max-width: 550px) {
+  #menu > div > div {
+    justify-content: flex-end;
+  }
 }

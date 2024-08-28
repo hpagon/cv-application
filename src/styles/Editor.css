@@ -23,6 +23,7 @@
   outline: none;
   box-sizing: border-box;
   padding-left: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .input input:focus {
