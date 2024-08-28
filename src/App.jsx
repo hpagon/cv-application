@@ -10,6 +10,16 @@ import { useReactToPrint } from "react-to-print";
 function App() {
   const resumeRef = useRef();
   const handlePrint = useReactToPrint({
+    pageStyle: `
+    @page {
+      margin: 0mm;
+    }
+    @media print {
+      #resume {
+        height: 100vh;
+      }
+    }
+    `,
     content: () => resumeRef.current,
   });
   const [resumeData, setResumeData] = useState(emptyData);
@@ -23,7 +33,7 @@ function App() {
         <div>
           <Editor handleChange={editResumeData} resumeData={resumeData} />
         </div>
-        <div>
+        <div id="resume-container">
           <Resume resumeData={resumeData} ref={resumeRef} />
         </div>
       </div>
