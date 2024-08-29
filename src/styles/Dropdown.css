@@ -15,6 +15,7 @@
   box-shadow: 0 0 3px gray;
   /* width: clamp(500px, 20%, 280px); */
   width: 26rem;
+  min-width: 286px;
   margin: 1.5em 0;
 }
 
@@ -47,12 +48,12 @@
 
 /* text styles */
 .dropdown h1 {
-  font-size: 1.6rem;
+  font-size: max(1.6rem, 20.8px);
   margin: 0;
 }
 
 .dropdown h2 {
-  font-size: 1.3rem;
+  font-size: max(1.3rem, 16.9px);
   margin: 0;
   text-wrap: nowrap;
   overflow: hidden;

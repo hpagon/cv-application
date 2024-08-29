@@ -1,5 +1,6 @@
 #editor {
   width: 26rem;
+  min-width: 286px;
 }
 
 .input {
@@ -10,20 +11,20 @@
 .input label,
 .description p {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: max(1rem, 13px);
 }
 
 .input input,
 .description input {
   width: 95%;
-  height: 2rem;
-  border-radius: 0.5rem;
-  margin-bottom: 0.6rem;
+  height: max(2rem, 28px);
+  border-radius: 8px;
+  margin-bottom: max(0.6rem, 7.8px);
   border: 1px solid gray;
   outline: none;
   box-sizing: border-box;
   padding-left: 0.7rem;
-  font-size: 0.8rem;
+  font-size: max(0.8rem, 10.4px);
 }
 
 .input input:focus {
@@ -53,6 +54,7 @@
 .description > div:nth-child(1) {
   display: flex;
   align-items: center;
+  /* min-height: 185.8px; */
 }
 
 .description > div:nth-child(n + 2) {
@@ -65,7 +67,7 @@
 }
 
 .description > div:nth-child(1) button {
-  margin-left: 0.5rem;
+  margin-left: max(0.5rem, 6.5px);
 }
 
 .description > div button {
@@ -81,5 +83,5 @@
 }
 
 .description .delete img {
-  height: 1.5rem;
+  height: max(1.5rem, 19.5px);
 }

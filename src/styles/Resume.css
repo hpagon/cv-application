@@ -13,7 +13,7 @@
   align-items: center;
   /* margin-top: 1.5rem; */
   width: var(--resume-width);
-  min-height: calc(var(--resume-width) / 8.5 * 11);
+  min-height: calc(var(--resume-width) / 8.5 * 10.5);
   background-color: white;
   flex-grow: 1;
 }
