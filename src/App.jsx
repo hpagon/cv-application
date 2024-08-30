@@ -26,12 +26,21 @@ function App() {
     content: () => resumeRef.current,
   });
   const [resumeData, setResumeData] = useState(emptyData);
+  const [mobile, setMobile] = useState(window.innerWidth < 440 ? true : false);
 
   const editResumeData = (newData) => setResumeData(newData);
+  function checkWindowWidth() {
+    setMobile(window.innerWidth < 440 ? true : false);
+  }
+  window.addEventListener("resize", checkWindowWidth);
 
   return (
     <>
-      <Menu handleChange={editResumeData} handlePrint={handlePrint} />
+      <Menu
+        handleChange={editResumeData}
+        handlePrint={handlePrint}
+        mobile={mobile}
+      />
       <div id="container">
         <div>
           <Editor handleChange={editResumeData} resumeData={resumeData} />

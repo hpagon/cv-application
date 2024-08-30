@@ -1,28 +1,22 @@
-import { emptyData, sampleData } from "../initialData";
 import "../styles/Menus.css";
+import MenuDropdown from "./MenuDropdown";
+import MenuButtons from "./MenuButtons";
 
-export default function Menu({ handleChange, handlePrint }) {
+export default function Menu({ handleChange, handlePrint, mobile }) {
   return (
     <div id="menu">
       <div>
         <h1>CV Builder</h1>
-        <div>
-          <button
-            onClick={() => {
-              handleChange(emptyData);
-            }}
-          >
-            Reset
-          </button>
-          <button
-            onClick={() => {
-              handleChange(sampleData);
-            }}
-          >
-            Fill
-          </button>
-          <button onClick={handlePrint}>Download</button>
-        </div>
+        {mobile ? (
+          <MenuDropdown>
+            <MenuButtons
+              handleChange={handleChange}
+              handlePrint={handlePrint}
+            />
+          </MenuDropdown>
+        ) : (
+          <MenuButtons handleChange={handleChange} handlePrint={handlePrint} />
+        )}
       </div>
     </div>
   );
