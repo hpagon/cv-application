@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import "../styles/Dropdown.css";
 
 export default function Dropdown({
@@ -9,8 +8,6 @@ export default function Dropdown({
   handleOpen,
   dropdownId,
 }) {
-  // const [visibility, setVisibility] = useState(false);
-
   const header = () => {
     const displayTitle = title === "" ? "Untitled" : title;
     if (type === "large") return <h1>{displayTitle}</h1>;
@@ -24,24 +21,13 @@ export default function Dropdown({
         {header()}
         <button
           onClick={() => {
-            // if (type === "large") {
-            //   handleOpen(title);
-            // } else {
-            //   setVisibility(!visibility);
-            // }
             handleOpen(dropdownId, type);
           }}
         >
           {open ? "^" : "˅"}
         </button>
       </div>
-      <div>
-        {/* large dropdowns depends on external state for visibility */}
-        {/* {type === "large" && open && children} */}
-        {/* Medium dropdowns depend on local state for visibility */}
-        {/* {type === "medium" && visibility && children} */}
-        {open && children}
-      </div>
+      <div>{open && children}</div>
     </div>
   );
 }

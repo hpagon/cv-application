@@ -3,10 +3,6 @@
   justify-content: space-between;
 }
 
-/* .section > .school > div:nth-child(1) p {
-  font-size: 0.7rem;
-} */
-
 .school > div:nth-child(2) p {
   font-style: italic;
 }

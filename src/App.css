@@ -1,8 +1,5 @@
 #root {
   width: 100%;
-  /* margin: 0 auto; */
-  /* padding: 2rem; */
-  /* text-align: center; */
 }
 
 .logo {
@@ -47,28 +44,20 @@
 }
 
 #container {
-  /* justify-self: center;   */
-  /* align-self: center; */
   display: flex;
   justify-content: space-around;
   margin-bottom: 3rem;
-  /* max-width: 1600px; */
 }
 
 #container > div {
-  /* max-width: 600px; */
   display: flex;
   justify-content: center;
-  /* margin: 0 1rem; */
 }
 
 #container > div:nth-child(1) {
   width: 45%;
-  /* justify-content: end; */
-  /* margin-right: 5rem; */
 }
 
 #container > div:nth-child(2) {
   width: 55%;
-  /* margin-right: 5rem; */
 }

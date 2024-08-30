@@ -4,7 +4,7 @@ import Editor from "./components/Editor";
 import Menu from "./components/Menu";
 import { emptyData } from "./initialData";
 import "./App.css";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 
 function App() {

@@ -1,19 +1,15 @@
 .dropdown {
-  /* box-shadow: 0 0 2px black; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px 0;
   background-color: white;
-  /* margin: 1.5em 0; */
 }
 
 /* large dropdown styles */
 .dropdown.large {
-  /* background-color: red; */
   border-radius: 12px;
   box-shadow: 0 0 3px gray;
-  /* width: clamp(500px, 20%, 280px); */
   width: 26rem;
   min-width: 286px;
   margin: 1.5em 0;
@@ -21,7 +17,6 @@
 
 /* medium dropdown styles */
 .dropdown.medium {
-  /* background-color: blue; */
   width: 100%;
   margin: 0.8em 0;
   border-bottom: 1px solid gray;
