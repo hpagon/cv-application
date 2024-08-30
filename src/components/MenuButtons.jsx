@@ -1,7 +1,7 @@
 import { emptyData, sampleData } from "../initialData";
 export default function MenuButtons({ handleChange, handlePrint }) {
   return (
-    <div>
+    <div id="menu-buttons">
       <button
         onClick={() => {
           handleChange(emptyData);
