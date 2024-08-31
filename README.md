@@ -1,8 +1,21 @@
-# React + Vite
+# CV Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Description
 
-Currently, two official plugins are available:
+This simple CV builder was made using React for the front end, and Vite for module bundling and development. The main intent for this project was to practice getting used to React and the `useState` hook. The resume format provided is heavily inspired by [Jake's resume template](https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs) and as such is mainly geared towards individuals in the tech field.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Features:
+
+- Export to PDF
+- Sample Resume Preview
+- Reset resume to blank template
+- Live editing for each resume section
+
+#### Live: https://cv-builder-orpin-eight.vercel.app/
+
+![alt text](./public/image.png)
+
+### Resources
+
+- Google Fonts: https://fonts.google.com/
+- Jake's Resume Template: https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
