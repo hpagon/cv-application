@@ -73,9 +73,22 @@
   top: 46.5px;
 }
 
+#menu-dropdown img {
+  border-radius: 5px;
+  padding: 3px;
+}
+
 #menu-dropdown.open img {
   transform: rotate(90deg);
   transition-duration: 0.1s;
+}
+
+#menu-dropdown img:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#menu-dropdown img:active {
+  scale: 0.95;
 }
 
 @media (max-width: 550px) {
